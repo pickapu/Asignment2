@@ -14,6 +14,13 @@ public class OrderDetails {
         this.orderId = orderId;
         this.image = image;
     }
+    public OrderDetails(String name, String date, int price, int image){
+        this.name = name;
+        this.date = date;
+        this.price = price;
+
+        this.image = image;
+    }
 
     public String getName() {
         return name;

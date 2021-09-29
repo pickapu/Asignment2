@@ -14,7 +14,7 @@ import com.example.restaurantapp.dataclass.Segments;
 
 import java.util.ArrayList;
 
-public class SegmentTwoAdapter extends RecyclerView.Adapter<SegmentTwoAdapter.ViewHolder> {
+public class SegmentTwoAdapter extends RecyclerView.Adapter<SegmentTwoAdapter.ViewHolderSegmentTwo> {
     ArrayList<Segments> item;
 
     public SegmentTwoAdapter(ArrayList<Segments> item) {
@@ -23,15 +23,15 @@ public class SegmentTwoAdapter extends RecyclerView.Adapter<SegmentTwoAdapter.Vi
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolderSegmentTwo onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View listItem= layoutInflater.inflate(R.layout.item_segment_two, parent, false);
-        SegmentTwoAdapter.ViewHolder viewHolder=new SegmentTwoAdapter.ViewHolder(listItem);
+        SegmentTwoAdapter.ViewHolderSegmentTwo viewHolder=new SegmentTwoAdapter.ViewHolderSegmentTwo(listItem);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderSegmentTwo holder, int position) {
         Segments data= item.get(position);
         holder.tvSegmentTwo.setText(data.getName());
         holder.tvSegmentTwo.setBackgroundResource(data.getImage());
@@ -58,11 +58,11 @@ public class SegmentTwoAdapter extends RecyclerView.Adapter<SegmentTwoAdapter.Vi
         this.item = item;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolderSegmentTwo extends RecyclerView.ViewHolder {
         TextView tvSegmentTwo;
         LinearLayout llSegmentTwo;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolderSegmentTwo(@NonNull View itemView) {
             super(itemView);
             this.tvSegmentTwo=itemView.findViewById(R.id.tvSegmentTwo);
             this.llSegmentTwo=itemView.findViewById(R.id.llSegmentTwo);

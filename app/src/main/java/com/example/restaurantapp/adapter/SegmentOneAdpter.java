@@ -18,7 +18,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class SegmentOneAdpter extends RecyclerView.Adapter<SegmentOneAdpter.ViewHolder> {
+public class SegmentOneAdpter extends RecyclerView.Adapter<SegmentOneAdpter.ViewHolderSegmentOne> {
     Context context;
     ArrayList<Segments> item;
 
@@ -29,16 +29,16 @@ public class SegmentOneAdpter extends RecyclerView.Adapter<SegmentOneAdpter.View
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolderSegmentOne onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View listItem= layoutInflater.inflate(R.layout.item_segment_one, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(listItem);
+        ViewHolderSegmentOne viewHolder = new ViewHolderSegmentOne(listItem);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderSegmentOne holder, int position) {
         Segments data= item.get(position);
         holder.tvSegmentOne.setText(data.getName());
         holder.tvSegmentOne.setBackgroundResource(data.getImage());
@@ -56,10 +56,10 @@ public class SegmentOneAdpter extends RecyclerView.Adapter<SegmentOneAdpter.View
         return item.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolderSegmentOne extends RecyclerView.ViewHolder{
        TextView tvSegmentOne;
        LinearLayout llSegmentOne;
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolderSegmentOne(@NonNull View itemView) {
             super(itemView);
             this.tvSegmentOne=itemView.findViewById(R.id.tvSegmentOne);
             this.llSegmentOne=itemView.findViewById(R.id.llSegmentOne);
