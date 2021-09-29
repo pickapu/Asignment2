@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
              android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/segment_one_background">
+    android:background="@drawable/segment_one_background"
+    android:id="@+id/llSegmentOne">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"

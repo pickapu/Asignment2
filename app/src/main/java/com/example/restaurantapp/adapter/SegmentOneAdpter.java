@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,7 @@ public class SegmentOneAdpter extends RecyclerView.Adapter<SegmentOneAdpter.View
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View listItem= layoutInflater.inflate(R.layout.item_segment_one, parent, false);
+
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
@@ -40,6 +42,12 @@ public class SegmentOneAdpter extends RecyclerView.Adapter<SegmentOneAdpter.View
         Segments data= item.get(position);
         holder.tvSegmentOne.setText(data.getName());
         holder.tvSegmentOne.setBackgroundResource(data.getImage());
+        holder.llSegmentOne.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 
@@ -48,11 +56,13 @@ public class SegmentOneAdpter extends RecyclerView.Adapter<SegmentOneAdpter.View
         return item.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder{
        TextView tvSegmentOne;
+       LinearLayout llSegmentOne;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.tvSegmentOne=itemView.findViewById(R.id.tvSegmentOne);
+            this.llSegmentOne=itemView.findViewById(R.id.llSegmentOne);
 
 
         }
