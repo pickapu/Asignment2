@@ -1,5 +1,6 @@
 package com.example.restaurantapp.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.restaurantapp.R;
 import com.example.restaurantapp.dataclass.OrderDetails;
+import com.example.restaurantapp.dataclass.PreviousOrder;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 public class PreviousOrderAdapter extends RecyclerView.Adapter<PreviousOrderAdapter.ViewHolderPreviousOrder> {
-ArrayList<OrderDetails> item;
+    Context context;
+ArrayList<PreviousOrder> item;
 
-    public PreviousOrderAdapter(ArrayList<OrderDetails> item) {
-        this.item = item;
-    }
+
 
     @NonNull
     @Override
@@ -33,7 +34,16 @@ ArrayList<OrderDetails> item;
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPreviousOrder holder, int position) {
-        OrderDetails data =item.get(position);
+        PreviousOrder data=item.get(position);
+        holder.tvDate.setText(data.getDate());
+        holder.tvOrderId.setText(data.getOrderId());
+        holder.tvPrice.setText(data.getTotalPrice()+"");
+        holder.tvViewOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 }
 

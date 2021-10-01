@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-             android:layout_height="wrap_content"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/segment_one_background"
-    android:id="@+id/llSegmentOne">
+    android:layout_margin="5dp"
+
+    android:id="@+id/llSegmentOne"
+    app:cardCornerRadius="10dp">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/rajasthani"
+        android:scaleType="centerCrop"
+        android:id="@+id/ivSegmentOne"/>
+
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="300dp"
-        android:background="@drawable/sample_background"
+
         android:text="sample"
+
         android:id="@+id/tvSegmentOne"
         android:textAlignment="gravity"
         android:gravity="bottom"
-        tools:ignore="MissingConstraints"
+        android:paddingBottom="10dp"
+        android:textColor="@color/white"
         android:layout_margin="5dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
         />
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>
